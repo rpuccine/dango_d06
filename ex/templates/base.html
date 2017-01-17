@@ -5,6 +5,14 @@
 		<title>{% block title %} Home {% endblock %}</title>
 	</head>
 	<body>
+		<nav>
+			Hello {{user_name}} !
+			<ul>
+				<li><a href="/">d06</a></li>
+				<li><a href="/sign_in">Sign in</a></li>
+				<li><a href="/log_in">Log in</a></li>
+			</ul>
+		</nav>
 		{% block content %}
 			Content
 		{% endblock %}

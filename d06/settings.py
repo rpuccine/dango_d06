@@ -30,6 +30,19 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+NAME = [
+    'henry',
+	'pol',
+	'pouet',
+	'choucou',
+	'ducon',
+	'lajoie',
+	'pignouf',
+	'bouffon',
+	'rem',
+	'titou',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'ex',
+	'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +90,12 @@ WSGI_APPLICATION = 'd06.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+		'USER': 'djangouser',
+		'PASSWORD': 'secret',
+		'HOST': 'localhost',
+		'PORT': '5432',
     }
 }
 
@@ -119,3 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'ex.MyUser'
+
+LOGIN_URL = '/log_in'
